@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://blog.skys.top/img/img_files/7FB3315813252D67AD9D058FBC5CC804">
 <meta property="og:image" content="https://blog.skys.top/img/img_files/3D8823B959FC12A542B02DD7657DFBBF">
 <meta property="og:image" content="https://blog.skys.top/img/img_files/D2B5396E84EA6B3E94437E6933D33CF8">
-<meta property="og:updated_time" content="2019-11-27T09:14:31.766Z">
+<meta property="og:updated_time" content="2019-12-10T07:49:02.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="科学上网方式及实践">
 <meta name="twitter:description" content="介绍主流方案及具体方法 前言：  前段时间，国内搞hw，突然出现了大规模的封禁，自己使用了1年多的小鸡也被ban了，欲哭无泪。借此契机，尝试了下新的科学上网方式，来让其起死回生而不至于白花钱浪费了，特此记录下。    目前主流常用于科学上网的主要有以下几种方案：    shadowsocks（简称ss、55）    shadowsocksr（简称ssr、酸酸乳等）    v2ray（简称v2）">
@@ -310,7 +310,7 @@ var _hmt = _hmt || [];
 <p>常规使用的客户端，windows有v2rayN，mac有v2rayX，Android有v2rayNG等，ios有kitsunebi、Shadowrocket等等。<br><strong>5</strong>.CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。<br>本质就是通过CDN你的流量并不是直接到你自己的主机。依靠这个可以借助CDN解决你服务器被ban的访问的问题，开启CDN之后，实际上当你ping你的主机时，返回的就不是你主机的真实ip了。就比如说你的主机在美国洛杉矶、由于被ban，没法直接通过国内再去访问连接你的主机了。这是通过CDN就相当于是另外建立了一个桥梁，CDN运营商的服务器能够访问你在美国的服务器，然后你能够访问CDN，就间接的建立了连接，通过这种方式，其实你所有的流量都是在正常不过的网络请求而已。因而降低了被封的风险，当然同时也因此可能也牺牲了一些速度，但是总体来讲总比直接封了不能用了要强很多不是。<br>关于cdn的使用也比较简单了，在此使用的是cloudflare的服务，是可以免费添加几个网站的，具体2个步骤即可完成:修改dns添加域名解析，设置代理状态。<br><img src="/img/img_files/D2B5396E84EA6B3E94437E6933D33CF8" alt="">  </p>
 </blockquote>
 <hr>
-<p>到此为止，目前主流的几种科学上网的方式都介绍完了。各有优劣，建议按需选择。<br>其实除此之外最简单的科学上网方式就是通过ssh客户端连接之后直接隧道设置转移规则转发就可以实现科学上网，无需在服务器端安装任何软件方便快捷。</p>
+<p>到此为止，目前主流的几种科学上网的方式都介绍完了。各有优劣，建议按需选择。<br>其实除此之外最简单的科学上网方式就是通过ssh客户端连接之后直接隧道设置转移规则转发就可以实现科学上网，无需在服务器端安装任何软件方便快捷。<br>2019/12/10 更新一个可以减少断流的方法，在cf的防护墙设置allow规则，如ip和相应的伪装路径等，同时也可以出于安全性考虑ban掉部分国外请求如来源国家非中国等。 </p>
 <hr>
 <p>相关工具及参考链接：  </p>
 <ul>
@@ -547,22 +547,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">逆向</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
@@ -575,23 +559,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">流量</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未分类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">起点</a>
+                <a href="javascript:void(0)" class="js-tag color3">逆向</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,15 +575,31 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hook</a>
+                <a href="javascript:void(0)" class="js-tag color3">安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Frida</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">未分类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">起点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">流量</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,6 +615,34 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Frida</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">科学上网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">v2ray</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
@@ -639,11 +655,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">so逆向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">刷量</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">so逆向</a>
+                <a href="javascript:void(0)" class="js-tag color5">vdex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,10 +684,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">safe</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vdex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,7 +715,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">影视分享</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术文档</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,27 +723,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">影视分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">动漫分享</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">科学上网</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">v2ray</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术文档</a>
               </li>
             
             <div class="clearfix"></div>
